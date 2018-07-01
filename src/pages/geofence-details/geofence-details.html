@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar hideBackButton color="primary">
+    <ion-title>Edit Catatan</ion-title>
+    <ion-buttons left>
+        <button ion-button (click)="home()">
+            <ion-icon class="customIcon" name="arrow-back"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button (click)="saveChanges()">
+        Simpan
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="geofence-details-page">
+  <ion-list class="geofence-input-list">
+    <ion-item>
+      <ion-input [(ngModel)]="notificationText" type="text" placeholder="Put notification text here. Example: Buy a milk"></ion-input>
+    </ion-item>
+<ion-item>
+<ion-textarea placeholder="Enter a description" [(ngModel)]="geofenceDesc"></ion-textarea>
+</ion-item>
+    <ion-item>
+      <ion-label>Disaat?</ion-label>
+      <ion-select [(ngModel)]="transitionType">
+        <ion-option value="1">Masuk Wilayah</ion-option>
+        <ion-option value="2">Keluar Wilayah</ion-option>
+        <ion-option value="3">Masuk atau keluar Wilayah</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="autocompleteText" type="text" placeholder="Search Places..."></ion-input>
+    </ion-item>
+            <ion-list [hidden]="autocompleteItems.length == 0">
+              <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+                {{ item.description }}
+              </ion-item>
+            </ion-list>
+    <ion-item>
+      <ion-range min="200" max="1000" [(ngModel)]="radius" secondary>
+        <ion-label range-left>Radius</ion-label>
+        <ion-label range-right>{{radius}}m</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+    <div id="map">
+    </div>
+</ion-content>

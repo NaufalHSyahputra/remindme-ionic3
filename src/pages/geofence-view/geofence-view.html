@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Lihat Catatan</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="edit()">
+        Ubah
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content class="cards-bg">
+  <ion-card>
+
+    <div id="map" style="height:390px;"></div>
+
+    <ion-item>
+      <ion-icon name="football" item-start large></ion-icon>
+      <h2>{{ geofence.notification.text }}</h2>
+      <p>Judul</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="wine" item-start large ></ion-icon>
+      <p style="color: black">{{ geofenceDesc }}</p>
+      <p>Deskripsi</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon color="subtle" large item-start name='pin'></ion-icon>
+      <p style="color: black">{{ autocompleteText }}</p>
+      <p>Alamat</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon color="subtle" large item-start name='pin'></ion-icon>
+      <p style="color: black">{{ details }}</p>
+      <p>Ketentuan Radius</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-col text-center>
+          <button ion-button block (click)="remove()">Hapus Catatan</button>
+      </ion-col>
+    </ion-item>
+
+  </ion-card>
+  <ion-fab bottom right>
+  <button ion-fab (click)="edit()" class="add-geofence-button">
+    <ion-icon name="create" md="md-create"></ion-icon>
+  </button>
+
+</ion-fab>
+</ion-content>

@@ -1,0 +1,28 @@
+.geofence-view-page {
+  .geofence-input-list {
+    margin-bottom: 15px;
+  }
+
+  .geofence-radius-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+
+    .geofence-radius-input-container {
+      width: 100%;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      input {
+        width: 100%;
+      }
+    }
+  }
+    .scroll {
+      height: 100%
+    }
+
+  .scroll-content {
+    overflow: hidden;
+  }
+}
