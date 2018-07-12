@@ -15,7 +15,7 @@ export class GeofenceService {
       transitionType: window.TransitionType.ENTER,
       notification: {
         id: this.getNextNotificationId(),
-        title: "Ionic geofence example",
+        title: "Remind Me!",
         text: "",
         icon: "res://ic_menu_mylocation",
         openAppOnClick: true,
